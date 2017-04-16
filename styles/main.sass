@@ -1,0 +1,146 @@
+//fonts
+@import ../node_modules/font-awesome/css/font-awesome.min.css
+
+//@import ../node_modules/font-awesome/fonts/fontawesome-webfont.eot
+
+//@import '../node_modules/font-awesome/fonts/fontawesome-webfont.svg'
+//@import '../node_modules/font-awesome/fonts/fontawesome-webfont.ttf'
+//@import '../node_modules/font-awesome/fonts/fontawesome-webfont.woff'
+//@import '../node_modules/font-awesome/fonts/fontawesome-webfont.eot2'
+//@import '../node_modules/font-awesome/fonts/fontAwesome.otf'
+
+
+
+
+
+//Colors
+$negro: black
+$gris: gray
+$violeta: #473B8D
+$violeta2: #40357F
+$amarillo: #FCEC00
+$blanco: #FFFFFF
+$blanco2: #D8D8D8
+$verde: #87C63E
+$verde2: #008000
+$rosado: #EC618B
+
+//Mixins
+= fuente_navbar()
+  color: $blanco
+  background-color: transparent
+  border-color: transparent
+  font-weight: 300,
+= enlaces_navbar()
+  color: $blanco
+  background-color: transparent
+  &:hover
+    background-color: transparent
+    color: $blanco,
+= texto_descripcion
+  text-align: center
+  color: $blanco
+  font-weight: 300
+
+
+
+
+body
+  overflow-x: hidden
+  background-color: $violeta
+  font-size: 15px
+  padding: 10px
+  margin-top: 10px
+
+  .navbar-default
+    @include fuente_navbar
+    .navbar-brand
+      color: $blanco
+      padding: 8px
+    .navbar-brand:hover
+      color: $blanco2
+    .navbar-nav>.active>a
+      @include enlaces_navbar
+  .navbar-default .navbar-nav>li>a
+    color: $blanco
+    padding: 8px
+    &:hover
+      color: $blanco2
+    &:focus
+      color: $blanco
+  //.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a
+    color: $blanco
+  .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover
+    color: $blanco2
+    background-color: transparent
+  .navbar-default .navbar-nav>li>a.btn_login
+    border-style: solid
+    border: 1px solid $blanco
+    border-radius: 5px
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 8px
+    padding-bottom: 8px
+  .fullscreen-bg
+    position: fixed
+    top: 0px
+    bottom: 0px
+    left: 0px
+    right: 0px
+    overflow: hidden
+    z-index: -100
+    width: 100%
+    height: 100%
+    opacity: 0.1
+    -webkit-filter: blur(5px)
+
+  section.texto_principal
+    margin-top: 150px
+    @include texto_descripcion
+    h1
+      @include texto_descripcion
+    .texto_descripcion
+      margin-top: 200px
+      color: $blanco2
+      font-size: 20px
+    ul
+      list-style: none
+      display: inline-flex
+      margin-left: -40px
+      li
+        padding-left: 30px
+        padding-right: 30px
+        padding-top: 8px
+        padding-bottom: 8px
+        font-size: 15px
+    .botones
+      margin-top: 20px
+      .btn_uno
+        margin-left: 10px
+        margin-right: 10px
+        background-color: $verde
+        border-radius: 5px
+        a
+          color: $verde2
+          font-weight: 400
+          &:hover
+            text-decoration: none
+      .btn_dos
+        margin-left: 10px
+        margin-right: 10px
+        border-style: solid
+        border: 1px solid $blanco
+        border-radius: 5px
+        a
+          color: $blanco
+          font-weight: 300
+          &:hover
+            text-decoration: none
+  section.testimonios
+    margin-top: 150px
+    color: $blanco2
+    font-weight: 300
+    background-color: $violeta2
+    padding: 30px
+  footer
+    background-color: $blanco2
